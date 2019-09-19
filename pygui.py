@@ -1,0 +1,273 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'switch_widget.ui'
+#
+# Created by: PyQt5 UI code generator 5.6
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+import serial
+
+class Ui_FiberSwitchController(object):
+    def setupUi(self, FiberSwitchController):
+        FiberSwitchController.setObjectName("FiberSwitchController")
+        FiberSwitchController.resize(358, 282)
+        FiberSwitchController.setAutoFillBackground(False)
+        self.horizontalLayoutWidget_3 = QtWidgets.QWidget(FiberSwitchController)
+        self.horizontalLayoutWidget_3.setGeometry(QtCore.QRect(20, 20, 311, 231))
+        self.horizontalLayoutWidget_3.setObjectName("horizontalLayoutWidget_3")
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_3)
+        self.horizontalLayout_4.setSizeConstraint(QtWidgets.QLayout.SetMinimumSize)
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.groupBox = QtWidgets.QGroupBox(self.horizontalLayoutWidget_3)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
+        self.groupBox.setSizePolicy(sizePolicy)
+        self.groupBox.setMinimumSize(QtCore.QSize(180, 0))
+        self.groupBox.setMaximumSize(QtCore.QSize(180, 16777215))
+        self.groupBox.setObjectName("groupBox")
+        self.verticalLayoutWidget = QtWidgets.QWidget(self.groupBox)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 20, 161, 191))
+        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.label_3 = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.label_3.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_3.setObjectName("label_3")
+        self.horizontalLayout_2.addWidget(self.label_3)
+        self.PortComboBox = QtWidgets.QComboBox(self.verticalLayoutWidget)
+        self.PortComboBox.setObjectName("PortComboBox")
+        self.horizontalLayout_2.addWidget(self.PortComboBox)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_2.addItem(spacerItem)
+        self.verticalLayout.addLayout(self.horizontalLayout_2)
+        self.gridLayout = QtWidgets.QGridLayout()
+        self.gridLayout.setObjectName("gridLayout")
+        self.label = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.label.setObjectName("label")
+        self.gridLayout.addWidget(self.label, 1, 0, 1, 1)
+        self.ChannelSpinBox = QtWidgets.QSpinBox(self.verticalLayoutWidget)
+        self.ChannelSpinBox.setObjectName("ChannelSpinBox")
+        self.gridLayout.addWidget(self.ChannelSpinBox, 0, 1, 1, 1)
+        self.CurrentChannelLabel = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.CurrentChannelLabel.setMaximumSize(QtCore.QSize(16777215, 31))
+        self.CurrentChannelLabel.setFrameShape(QtWidgets.QFrame.WinPanel)
+        self.CurrentChannelLabel.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.CurrentChannelLabel.setText("")
+        self.CurrentChannelLabel.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.CurrentChannelLabel.setObjectName("CurrentChannelLabel")
+        self.gridLayout.addWidget(self.CurrentChannelLabel, 1, 1, 1, 1)
+        self.label_2 = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.label_2.setObjectName("label_2")
+        self.gridLayout.addWidget(self.label_2, 0, 0, 1, 1)
+        self.verticalLayout.addLayout(self.gridLayout)
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_3.addItem(spacerItem1)
+        self.ConfigurePushButton = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.ConfigurePushButton.setObjectName("ConfigurePushButton")
+        self.horizontalLayout_3.addWidget(self.ConfigurePushButton)
+        self.verticalLayout.addLayout(self.horizontalLayout_3)
+        self.horizontalLayout_4.addWidget(self.groupBox)
+        self.groupBox_2 = QtWidgets.QGroupBox(self.horizontalLayoutWidget_3)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.groupBox_2.sizePolicy().hasHeightForWidth())
+        self.groupBox_2.setSizePolicy(sizePolicy)
+        self.groupBox_2.setMinimumSize(QtCore.QSize(100, 0))
+        self.groupBox_2.setMaximumSize(QtCore.QSize(200, 16777215))
+        self.groupBox_2.setObjectName("groupBox_2")
+        self.gridLayoutWidget_2 = QtWidgets.QWidget(self.groupBox_2)
+        self.gridLayoutWidget_2.setGeometry(QtCore.QRect(0, 20, 111, 201))
+        self.gridLayoutWidget_2.setObjectName("gridLayoutWidget_2")
+        self.gridLayout_2 = QtWidgets.QGridLayout(self.gridLayoutWidget_2)
+        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_2.setSpacing(0)
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.label_5 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_5.setAutoFillBackground(False)
+        self.label_5.setFrameShape(QtWidgets.QFrame.Box)
+        self.label_5.setObjectName("label_5")
+        self.gridLayout_2.addWidget(self.label_5, 0, 0, 1, 1)
+        self.label_10 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_10.setAutoFillBackground(False)
+        self.label_10.setFrameShape(QtWidgets.QFrame.Box)
+        self.label_10.setObjectName("label_10")
+        self.gridLayout_2.addWidget(self.label_10, 5, 0, 1, 1)
+        self.label_7 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_7.setAutoFillBackground(False)
+        self.label_7.setFrameShape(QtWidgets.QFrame.Box)
+        self.label_7.setObjectName("label_7")
+        self.gridLayout_2.addWidget(self.label_7, 2, 0, 1, 1)
+        self.label_12 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_12.setAutoFillBackground(False)
+        self.label_12.setFrameShape(QtWidgets.QFrame.Box)
+        self.label_12.setObjectName("label_12")
+        self.gridLayout_2.addWidget(self.label_12, 7, 0, 1, 1)
+        self.label_8 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_8.setAutoFillBackground(False)
+        self.label_8.setFrameShape(QtWidgets.QFrame.Box)
+        self.label_8.setObjectName("label_8")
+        self.gridLayout_2.addWidget(self.label_8, 3, 0, 1, 1)
+        self.label_9 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_9.setAutoFillBackground(False)
+        self.label_9.setFrameShape(QtWidgets.QFrame.Box)
+        self.label_9.setObjectName("label_9")
+        self.gridLayout_2.addWidget(self.label_9, 4, 0, 1, 1)
+        self.label_6 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_6.setAutoFillBackground(False)
+        self.label_6.setFrameShape(QtWidgets.QFrame.Box)
+        self.label_6.setObjectName("label_6")
+        self.gridLayout_2.addWidget(self.label_6, 1, 0, 1, 1)
+        self.label_11 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_11.setAutoFillBackground(False)
+        self.label_11.setFrameShape(QtWidgets.QFrame.Box)
+        self.label_11.setObjectName("label_11")
+        self.gridLayout_2.addWidget(self.label_11, 6, 0, 1, 1)
+        self.label_13 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_13.setAutoFillBackground(False)
+        self.label_13.setFrameShape(QtWidgets.QFrame.Box)
+        self.label_13.setObjectName("label_13")
+        self.gridLayout_2.addWidget(self.label_13, 0, 1, 1, 1)
+        self.label_14 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_14.setAutoFillBackground(False)
+        self.label_14.setFrameShape(QtWidgets.QFrame.Box)
+        self.label_14.setObjectName("label_14")
+        self.gridLayout_2.addWidget(self.label_14, 1, 1, 1, 1)
+        self.label_15 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_15.setAutoFillBackground(False)
+        self.label_15.setFrameShape(QtWidgets.QFrame.Box)
+        self.label_15.setObjectName("label_15")
+        self.gridLayout_2.addWidget(self.label_15, 2, 1, 1, 1)
+        self.label_16 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_16.setAutoFillBackground(False)
+        self.label_16.setFrameShape(QtWidgets.QFrame.Box)
+        self.label_16.setObjectName("label_16")
+        self.gridLayout_2.addWidget(self.label_16, 3, 1, 1, 1)
+        self.label_17 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_17.setAutoFillBackground(False)
+        self.label_17.setFrameShape(QtWidgets.QFrame.Box)
+        self.label_17.setObjectName("label_17")
+        self.gridLayout_2.addWidget(self.label_17, 4, 1, 1, 1)
+        self.label_18 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_18.setAutoFillBackground(False)
+        self.label_18.setFrameShape(QtWidgets.QFrame.Box)
+        self.label_18.setObjectName("label_18")
+        self.gridLayout_2.addWidget(self.label_18, 5, 1, 1, 1)
+        self.label_19 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_19.setAutoFillBackground(False)
+        self.label_19.setFrameShape(QtWidgets.QFrame.Box)
+        self.label_19.setObjectName("label_19")
+        self.gridLayout_2.addWidget(self.label_19, 6, 1, 1, 1)
+        self.label_20 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.label_20.setAutoFillBackground(False)
+        self.label_20.setFrameShape(QtWidgets.QFrame.Box)
+        self.label_20.setObjectName("label_20")
+        self.gridLayout_2.addWidget(self.label_20, 7, 1, 1, 1)
+        self.horizontalLayout_4.addWidget(self.groupBox_2)
+
+        self.retranslateUi(FiberSwitchController)
+        QtCore.QMetaObject.connectSlotsByName(FiberSwitchController)
+        
+        portnames = ['COM4', 'COM5', 'COM6', 'COM7']
+        self.PortComboBox.insertItems(0, portnames)
+        self.PortComboBox.setCurrentIndex(1) #for COM5
+        self.PortComboBox.activated.connect(self.ChangePort)
+        self.ChannelSpinBox.setMaximum(8)
+        self.InitSerial()
+        self.echoOn = False
+        self.ConfigurePushButton.clicked.connect(self.set_channel)
+
+    def retranslateUi(self, FiberSwitchController):
+        _translate = QtCore.QCoreApplication.translate
+        FiberSwitchController.setWindowTitle(_translate("FiberSwitchController", "Form"))
+        self.groupBox.setTitle(_translate("FiberSwitchController", "Program Fiber Switch"))
+        self.label_3.setText(_translate("FiberSwitchController", "Port:"))
+        self.label.setText(_translate("FiberSwitchController", "Current Channel"))
+        self.label_2.setText(_translate("FiberSwitchController", "Set Channel"))
+        self.ConfigurePushButton.setText(_translate("FiberSwitchController", "Configure"))
+        self.groupBox_2.setTitle(_translate("FiberSwitchController", "Channel Code"))
+        self.label_5.setText(_translate("FiberSwitchController", "0"))
+        self.label_10.setText(_translate("FiberSwitchController", "5"))
+        self.label_7.setText(_translate("FiberSwitchController", "2"))
+        self.label_12.setText(_translate("FiberSwitchController", "7"))
+        self.label_8.setText(_translate("FiberSwitchController", "3"))
+        self.label_9.setText(_translate("FiberSwitchController", "4"))
+        self.label_6.setText(_translate("FiberSwitchController", "1"))
+        self.label_11.setText(_translate("FiberSwitchController", "6"))
+        self.label_13.setText(_translate("FiberSwitchController", "<Parked>"))
+        self.label_14.setText(_translate("FiberSwitchController", "<blank>"))
+        self.label_15.setText(_translate("FiberSwitchController", "<blank>"))
+        self.label_16.setText(_translate("FiberSwitchController", "<blank>"))
+        self.label_17.setText(_translate("FiberSwitchController", "<blank>"))
+        self.label_18.setText(_translate("FiberSwitchController", "<blank>"))
+        self.label_19.setText(_translate("FiberSwitchController", "<blank>"))
+        self.label_20.setText(_translate("FiberSwitchController", "<blank>"))
+
+    def ChangePort(self):
+        self.ser.close()
+        self.InitSerial()
+    
+    def InitSerial(self):
+        try:
+            print(self.PortComboBox.currentText())
+            self.ser = serial.Serial(
+                    port = self.PortComboBox.currentText(),
+                    baudrate = 115200,
+                    timeout = 1,
+                    bytesize = serial.EIGHTBITS,
+                    stopbits = serial.STOPBITS_ONE
+                    )
+            self.currChannel = self.get_channel()
+        except:
+            print('Cannot connect with port ' + self.PortComboBox.currentText())
+    
+    def get_channel(self):
+        cmd = b'I1?\r'
+        self.ser.write(cmd)
+        response = self.ser.read(100).decode()
+        print(response)
+        #print('Current Channel: ' + response)
+        return response   
+
+
+    def set_channel(self):
+        chan = self.ChannelSpinBox.value()
+        cmd = b'I1 ' + str(chan).encode() + b'\r'
+        self.ser.write(cmd)
+        self.ser.reset_input_buffer()
+#        chan = self.get_channel()
+        #print('Channel set to: ' + str(chan))
+        
+        self.CurrentChannelLabel.setText(str(chan))
+    
+    
+    def echo_toggle(self):
+        self.echoOn = not self.echoOn
+        cmd = b'EO ' + str(int(self.echoOn)).encode()
+        
+        self.ser.write(cmd)
+        response = self.ser.read(100)
+        print('Echo: ' + response)
+        return response
+
+if __name__ == "__main__":
+    import sys
+    app = 0
+    app = QtWidgets.QApplication(sys.argv)
+    FiberSwitchController = QtWidgets.QWidget()
+    ui = Ui_FiberSwitchController()
+    ui.setupUi(FiberSwitchController)
+    FiberSwitchController.show()
+    app.exec_()
+    ui.ser.close()
+
