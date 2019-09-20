@@ -7,3 +7,7 @@ Dependencies:
 * Python 3.6
 * PyQt5
 * PySerial
+
+To Run:
+1. Change the COM port number in the pygui.py file. You can get that from your Device Manager (in Windows)
+2. Run the .bat file to launch the GUI. 
